@@ -29,15 +29,14 @@ var randomShape = function () {
   const topSpot = [40, 50, 30, 20];
   const color = ["purple", "orange", "yellow", "green", "blue"];
 
-    //random id 
+  //random id
   whichClass = shape[Math.floor(Math.random() * shape.length)];
   newClass = whichClass.toString();
 
   console.log("old " + newClass);
   console.log(typeof newClass);
 
-
-//random styling
+  //random styling
   randWidthLength = widthLength[Math.floor(Math.random() * widthLength.length)];
   randColor = color[Math.floor(Math.random() * color.length)];
 
@@ -47,39 +46,47 @@ var randomShape = function () {
   document.getElementById(newClass).style.display = "inherit";
 
   console.log(randWidthLength);
-  console.log(randColor)
+  console.log(typeof(randWidthLength));
 
+  console.log(randColor);
 
+  // return newClass;
 };
 
 toClearTimer = function (timer) {
   clearInterval(timer);
 };
 
-document.getElementById("testbtn").addEventListener('click', function(){
+document.getElementById("testbtn").addEventListener("click", function () {
   toBegin();
   randomShape();
+});
 
-})
+randomShape();
 
+console.log(newClass)
 
 document.getElementById(newClass).addEventListener("click", function () {
+  console.log('clicked')
   toClearTimer(timer);
   console.log(timer);
   //reset timer
 
-
+  //   if(newClass == newClass)
 
   document.getElementById(newClass).style.display = "none";
 
   var timeDelay = setTimeout(function () {
-    whichClass = " ";
-    newClass = " ";
+    // whichClass = " ";
+    // newClass = " ";
     toBegin();
 
-    //     whichClass = shape[Math.floor(Math.random() * shape.length)];
+    // whichClass = shape[Math.floor(Math.random() * shape.length)];
     // newClass = whichClass.toString();
     console.log("new " + newClass + " should be blank");
     randomShape();
+
   }, 1000);
+
+  // timeDelay()?
 });
